@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-body: "Inter", ui-sans-serif, sans-serif;
+
+  --color-ink: #12131c;
+  --color-ink-soft: #1b1d2b;
+  --color-paper: #f3f1ea;
+  --color-paper-dim: #c9c7bd;
+  --color-gold: #e0a530;
+  --color-gold-soft: #f2c874;
+  --color-teal: #4fb8a8;
+  --color-rose: #d4676f;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+}
