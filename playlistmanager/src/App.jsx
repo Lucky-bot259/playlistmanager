@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import TrackForm from './components/TrackForm.jsx'
+import TrackTable from './components/TrackTable.jsx'
 
 export default function App() {
   const [view, setView] = useState('form')
   const [tracks, setTracks] = useState([])
+  const [selectedId, setSelectedId] = useState(null)
 
   const handleAddTrack = (track) => {
     setTracks((prev) => [...prev, track])
@@ -19,9 +21,10 @@ export default function App() {
         {view === 'form' ? (
           <TrackForm onAddTrack={handleAddTrack} />
         ) : (
-          <p className="text-paper-dim font-body text-sm">
-            Registry table goes here.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
+            <TrackTable tracks={tracks} selectedId={selectedId} onSelectRow={setSelectedId} />
+            <p className="text-paper-dim font-body text-sm">Detail card goes here.</p>
+          </div>
         )}
       </main>
     </div>
